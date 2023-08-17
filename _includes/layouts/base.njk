@@ -30,6 +30,12 @@
 
 		{#- Render the CSS bundle using Inlined CSS (for the fastest site performance in production) #}
 		<style>{% getBundle "css" %}</style>
+		<style>
+			#logo{
+			height: 8em;
+
+			}
+		</style>
 		{#- Renders the CSS bundle using a separate file, if you can't set CSP directive style-src: 'unsafe-inline' #}
 		{#- <link rel="stylesheet" href="{% getBundleFileUrl "css" %}"> #}
 	</head>
@@ -37,8 +43,9 @@
 		<a href="#skip" class="visually-hidden">Skip to main content</a>
 
 		<header>
-			<img src="/Logo.webp" alt="">
-			<a href="/" class="home-link">{{ metadata.title }}</a>
+			<a href="/" class="home-link">
+				<img id="LOGO"src="https://api.logo.com/api/v2/images?logo=logo_d63fae81-5725-44dd-bc08-8989dee81a09&format=webp&margins=0&quality=60&width=500&background=transparent&u=1692271106" alt="">
+			</a>
 
 			{#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
 			<nav>
