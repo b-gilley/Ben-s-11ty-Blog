@@ -43,7 +43,7 @@
 	<body>
 		<a href="#skip" class="visually-hidden">Skip to main content</a>
 
-		<header>
+		<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
 			<a href="/" class="home-link">
 				<img id="LOGO"src="https://api.logo.com/api/v2/images?logo=logo_d63fae81-5725-44dd-bc08-8989dee81a09&format=webp&margins=0&quality=60&width=500&background=transparent&u=1692271106" alt="" height="155.5">
 			</a>
@@ -51,13 +51,23 @@
 			{#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
 			<nav>
 				<h2 class="visually-hidden">Top level navigation menu</h2>
-				<ul class="nav">
+				<ul class="nav nav-pills">
 				{%- for entry in collections.all | eleventyNavigation %}
 					<li class="nav-item"><a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a></li>
 				{%- endfor %}
 				</ul>
 			</nav>
 		</header>
+
+      <header >
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+          <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+          <span class="fs-4">Benjamin's Portfolio</span>
+        </a>
+  
+    
+      </header>
+
 
 		<main id="skip">
 			{{ content | safe }}
