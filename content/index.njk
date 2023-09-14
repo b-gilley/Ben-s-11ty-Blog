@@ -5,7 +5,7 @@ eleventyNavigation:
   order: 1
 numberOfLatestPostsToShow: 3
 ---
-
+{% extends "parent.html" %}
 {# List every content page in the project #}
 {#
 <ul>
@@ -14,7 +14,7 @@ numberOfLatestPostsToShow: 3
 	{%- endfor %}
 </ul>
 #}
-	
+
     <!-- <aside id="sidebar">
         <div>
             <button id="sidebarToggle" title="Toggles Sidebar" type="button" role="button"><img src="resources/SidebarToggleIcon.png" alt="" width="25px" height="25px"></button>
@@ -23,7 +23,8 @@ numberOfLatestPostsToShow: 3
 
        </p>
     </aside>  -->
-   
+		
+{% block main %} 
 <main id="main-container">
   <section class="hero">
   <header class="hero"> <h2>Heading</h2> </header>
@@ -60,16 +61,13 @@ numberOfLatestPostsToShow: 3
           •	Competent knowledge of Maya<br>•	Competent knowledge of the Substance suite <br><span class="bullet2">o	Alchemist</span><br><span class="bullet2">o	Painter</span><br><span class="bullet2">o	Designer</span><br>
           </p>
           <p>        
-            •	Proficient Knowledge of version control <br> <span class="bullet2">o	SourceTree</span> <br> <span class="bullet2">o	GitHub</span> <br>
-            •	Competent knowledge of project management tools such as Trello<br>
-            •	Competent knowledge of various graphics editor and painting software <br><span class="bullet2">o	Photoshop </span><br><span class="bullet2">o	PaintTool SAI</span><br><span class="bullet2">o	Aseprite</span><br>
-            •	Proficient in Microsoft Office applications and similar program packages<br>
-            •	Competent knowledge of computer hardware<br>
-            •	Experience working on the till and serving customers.<br>
-            •	Experience sorting and maintaining an inventory of stock<br>
-            •	Experience managing displays and shop floor inventory<br>
-            •	Competent knowledge of Serif WebPlus (Web authoring software) <br>
-            •	Full clean driving license<br>
+          •	Proficient Knowledge of version control <br> <span class="bullet2">o	SourceTree</span> <br> <span class="bullet2">o	GitHub</span> <br>
+          •	Competent knowledge of project management tools such as Trello<br>
+          •	Competent knowledge of various graphics editor and painting software <br><span class="bullet2">o	Photoshop </span><br><span class="bullet2">o	PaintTool SAI</span><br><span class="bullet2">o	Aseprite</span><br>
+          •	Proficient in Microsoft Office applications and similar program packages<br>•	Competent knowledge of Serif WebPlus (Web authoring software) <br>
+          •	Competent knowledge of computer hardware<br>
+          •	Experience working on the till and serving customers.<br>•	Experience sorting and maintaining an inventory of stock<br>•	Experience managing displays and shop floor inventory<br>
+          •	Full clean driving license<br>
           </p>
         </div>
       </div>
@@ -120,4 +118,5 @@ numberOfLatestPostsToShow: 3
     </p>
     <a href="#">LINK TEXT</a>
   -->
-</main>    
+</main>
+{% endblock %}      
