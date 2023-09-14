@@ -5,18 +5,6 @@ eleventyNavigation:
   order: 1
 numberOfLatestPostsToShow: 3
 ---
-{% set postsCount = collections.posts | length %}
-{% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
-<h1>Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}</h1>
-
-{% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
-{% set postslistCounter = postsCount %}
-{% include "postslist.njk" %}
-
-{% set morePosts = postsCount - numberOfLatestPostsToShow %}
-{% if morePosts > 0 %}
-<p>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in <a href="/blog/">the archive</a>.</p>
-{% endif %}
 
 {# List every content page in the project #}
 {#
@@ -36,28 +24,15 @@ numberOfLatestPostsToShow: 3
        </p>
     </aside>  -->
    
-    <main id="main-container">
-
-        <header class="hero"> <h2>Heading</h2> </header>
-        <p> 
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-          Perferendis distinctio dolorem molestias earum culpa dolores assumenda natus praesentium reprehenderit eius quidem perspiciatis in pariatur iure aliquid, odio hic debitis?
-          Sit.
-          Ex tempore accusantium dolor minima! Voluptates ipsa est suscipit nam? Illo quaerat, perspiciatis officiis nostrum explicabo qui. Minus id blanditiis nam maiores!
-           Magni, totam! Magni nisi animi sit soluta minus.
-          Sed aperiam aut eum numquam dolorem maxime provident doloribus in atque sapiente suscipit mollitia vitae quisquam quo architecto cupiditate porro, similique totam consequatur consequuntur ut asperiores animi. Dolore, magni deserunt!
-        </p>
-        <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus, quam voluptatibus! Ipsum, perferendis, amet aliquid ut eaque placeat eveniet quo quae provident autem neque alias! Necessitatibus ipsam officia dicta omnis.
-            Fugit natus, accusamus rem perferendis deleniti harum beatae labore. Necessitatibus corporis eveniet molestiae voluptate voluptas doloremque, quidem deleniti pariatur aut quibusdam hic eos obcaecati, rerum asperiores mollitia quis commodi! Ad?
-            Id, exercitationem ex cum hic sit, quod asperiores ea aperiam dolore totam reprehenderit dolorem quos cupiditate explicabo consectetur ullam veritatis! Molestias pariatur saepe ad quam! Magnam sapiente praesentium debitis quis?
-            Eum eos totam at ex provident neque, maiores nostrum quo voluptas. Illo maxime odio quo, odit sed voluptate adipisci assumenda. Iusto quos omnis qui quis laborum est officia natus corrupti.
-            Dignissimos, laboriosam! Explicabo a modi, assumenda sint ex aperiam, culpa esse aliquam recusandae tenetur voluptatibus, non libero accusamus perspiciatis! Beatae voluptates eligendi cum architecto? Repudiandae tenetur sequi architecto quam fuga!
-        </p>
-        <section class="hero">
-
-        </section>
-        <div class="accordion" id="accordionExample">
+<main id="main-container">
+  <section class="hero">
+  <header class="hero"> <h2>Heading</h2> </header>
+    <p> 
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+    Perferendis distinctio dolorem molestias earum culpa dolores assumenda natus praesentium reprehenderit eius quidem perspiciatis in pariatur iure aliquid, odio hic debitis?
+    </p>
+  </section>
+    <div class="accordion" id="accordionExample">
             
             <div class="accordion-item">
               <h2 class="accordion-header">
@@ -139,6 +114,19 @@ numberOfLatestPostsToShow: 3
         </p>
         
         <a href="#">LINK TEXT</a> -->
-    </main>
-    
+</main>
+
+
+{% set postsCount = collections.posts | length %}
+{% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
+<h1>Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}</h1>
+
+{% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
+{% set postslistCounter = postsCount %}
+{% include "postslist.njk" %}
+
+{% set morePosts = postsCount - numberOfLatestPostsToShow %}
+{% if morePosts > 0 %}
+<p>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in <a href="/blog/">the archive</a>.</p>
+{% endif %}    
     
